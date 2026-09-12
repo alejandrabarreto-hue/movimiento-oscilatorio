@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cuaderno Interactivo de Física III | Movimiento Oscilatorio y M.A.S.</title>
+  <meta name="description" content="Cuaderno digital interactivo vertical de Física III sobre Movimiento Oscilatorio y Cinemática del M.A.S. con encuadernación superior, gráficos estilo GeoGebra y simulador dinámico.">
+  
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- KaTeX CSS & JS para renderizado matemático ultra nítido -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+  <!-- Estilos del Cuaderno Digital Vertical -->
+  <link rel="stylesheet" href="css/notebook.css">
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- Barra Superior de Control -->
+    <header class="top-bar">
+      <div class="top-bar-brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-atom"></i>
+        </div>
+        <div>
+          <h1 class="brand-title">FÍSICA III &bull; CUADERNO DIGITAL VERTICAL</h1>
+          <p class="brand-subtitle">Movimiento Oscilatorio &bull; Cinemática del M.A.S.</p>
+        </div>
+      </div>
+      <div class="top-bar-actions">
+        <button id="btnFullscreen" class="btn-pill" title="Modo Pantalla Completa">
+          <i class="fa-solid fa-expand"></i>
+          <span>Pantalla Completa</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Escenario Principal del Cuaderno Vertical -->
+    <main class="book-stage">
+
+      <!-- Espiral Metálico Superior (Encuadernación de Cuaderno Vertical) -->
+      <div class="notebook-spiral-binder" aria-hidden="true">
+        <div class="spiral-ring"></div>
+        <div class="spiral-ring"></div>
+        <div class="spiral-ring"></div>
+        <div class="spiral-ring"></div>
+        <div class="spiral-ring"></div>
+        <div class="spiral-ring"></div>
+        <div class="spiral-ring"></div>
+        <div class="spiral-ring"></div>
+        <div class="spiral-ring"></div>
+        <div class="spiral-ring"></div>
+        <div class="spiral-ring"></div>
+        <div class="spiral-ring"></div>
+        <div class="spiral-ring"></div>
+        <div class="spiral-ring"></div>
+        <div class="spiral-ring"></div>
+        <div class="spiral-ring"></div>
+      </div>
+
+      <!-- ====================================================================
+           PÁGINA 1: PORTADA OFICIAL (LIMPIA, SIN CAJA BLANCA QUE LA TAPE)
+           ==================================================================== -->
+      <section id="page-1" class="notebook-page page-cover active" title="Haz clic para abrir el cuaderno">
+        <!-- Barra de acción discreta e interactiva en la parte inferior -->
+        <div class="cover-action-bar" id="btnOpenCover">
+          <span class="cover-btn-text">
+            <i class="fa-solid fa-book-open"></i>
+            Abrir Cuaderno &bull; Pasar Hoja
+            <i class="fa-solid fa-arrow-up"></i>
+          </span>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PÁGINA 2: EQUIPO MULTIDISCIPLINAR DE IAS & PRÓLOGO
+           ==================================================================== -->
+      <section id="page-2" class="notebook-page page-with-template">
+        <div class="page-inner-content">
+          <div class="page-header-banner">
+            <span class="page-category-tag"><i class="fa-solid fa-users-gear"></i> Presentación Editorial</span>
+            <span class="page-sequence-indicator">Hoja 2 de 15</span>
+          </div>
+
+          <h2 class="page-title">Equipo Multidisciplinar de IAs</h2>
+          <p class="page-subtitle">Comité de Inteligencias Artificiales Especializadas para la Excelencia Académica y Tecnológica</p>
+
+          <p>
+            Este cuaderno digital vertical interactivo ha sido concebido mediante la colaboración sinérgica de un equipo multidisciplinar de modelos de inteligencia artificial avanzados, integrando los principios rectores de la física teórica, el cálculo diferencial, la ingeniería de software moderna y la pedagogía científica:
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin: 24px 0;">
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; box-shadow: var(--shadow-sm); border-top: 4px solid #3b82f6;">
+              <h4 style="color: #1e40af; font-size: 1rem; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-magnet"></i> Dr. Robert Feynman
+              </h4>
+              <div style="font-size: 0.78rem; font-weight: 700; color: #64748b; text-transform: uppercase; margin-bottom: 6px;">IA Especialista en Física Teórica</div>
+              <p style="font-size: 0.88rem; color: #475569; margin: 0;">Garante del rigor en las leyes de Newton, elasticidad de Hooke, balances de energía cinética y potencial, y análisis dimensional.</p>
+            </div>
+
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; box-shadow: var(--shadow-sm); border-top: 4px solid #8b5cf6;">
+              <h4 style="color: #6d28d9; font-size: 1rem; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-square-root-variable"></i> Dr. Carl F. Gauss
+              </h4>
+              <div style="font-size: 0.78rem; font-weight: 700; color: #64748b; text-transform: uppercase; margin-bottom: 6px;">IA Especialista en Matemáticas Puras</div>
+              <p style="font-size: 0.88rem; color: #475569; margin: 0;">Responsable de la derivación analítica de la ecuación diferencial ordinaria de 2do orden del M.A.S. y tipografía KaTeX.</p>
+            </div>
+
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; box-shadow: var(--shadow-sm); border-top: 4px solid #10b981;">
+              <h4 style="color: #047857; font-size: 1rem; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-code"></i> Ing. Elena Rostova
+              </h4>
+              <div style="font-size: 0.78rem; font-weight: 700; color: #64748b; text-transform: uppercase; margin-bottom: 6px;">Lead Frontend & SPA/PWA Architect</div>
+              <p style="font-size: 0.88rem; color: #475569; margin: 0;">Diseño de la estructura reactiva SPA, animaciones de volteo vertical a 60 FPS, Web Audio API y arquitectura responsive adaptable.</p>
+            </div>
+
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; box-shadow: var(--shadow-sm); border-top: 4px solid #f59e0b;">
+              <h4 style="color: #b45309; font-size: 1rem; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-chart-line"></i> Ing. Alan Turing
+              </h4>
+              <div style="font-size: 0.78rem; font-weight: 700; color: #64748b; text-transform: uppercase; margin-bottom: 6px;">Motor GeoGebra & Canvas 2D</div>
+              <p style="font-size: 0.88rem; color: #475569; margin: 0;">Creador del motor gráfico con papel milimetrado, ticks, reglas escaladas dinámicas, zoom centrado, pan y personalización.</p>
+            </div>
+          </div>
+
+          <div class="concept-callout">
+            <div class="concept-callout-title">
+              <i class="fa-solid fa-circle-info"></i> Prólogo Editorial y Propósito Formativo
+            </div>
+            <p style="margin: 0; font-size: 0.92rem;">
+              Las oscilaciones mecánicas constituyen el cimiento sobre el cual se erige la física ondulatoria, la acústica, la óptica, la teoría electromagnética y la mecánica cuántica. Este cuaderno interactivo vertical permite una inmersión completa que une la demostración analítica rigurosa con la experimentación visual en tiempo real.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PÁGINA 3: ÍNDICE GENERAL INTERACTIVO
+           ==================================================================== -->
+      <section id="page-3" class="notebook-page page-with-template">
+        <div class="page-inner-content">
+          <div class="page-header-banner">
+            <span class="page-category-tag"><i class="fa-solid fa-list-ol"></i> Estructura Académica</span>
+            <span class="page-sequence-indicator">Hoja 3 de 15</span>
+          </div>
+
+          <h2 class="page-title">Índice General de Contenidos</h2>
+          <p class="page-subtitle">Guía de Navegación Rápida a Módulos Teóricos, Simuladores y Demostraciones</p>
+
+          <div style="background: #ffffff; border-radius: 12px; padding: 20px; box-shadow: var(--shadow-sm); border: 1px solid rgba(67, 40, 116, 0.15);">
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+
+              <a href="#" data-target-page="4" style="text-decoration: none; display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #fafaf9; border-radius: 8px; border: 1px solid #e7e5e4; transition: all 0.2s ease;">
+                <span style="font-weight: 600; color: #1e1b4b;"><i class="fa-solid fa-diagram-project" style="color: #6366f1; width: 22px;"></i> Módulo I: Mapa Mental Interactivo del Movimiento Oscilatorio</span>
+                <span style="font-family: var(--font-mono); font-size: 0.85rem; color: #d97706; font-weight: 700;">Hoja 4</span>
+              </a>
+
+              <a href="#" data-target-page="5" style="text-decoration: none; display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #fafaf9; border-radius: 8px; border: 1px solid #e7e5e4; transition: all 0.2s ease;">
+                <span style="font-weight: 600; color: #1e1b4b;"><i class="fa-solid fa-timeline" style="color: #8b5cf6; width: 22px;"></i> Módulo II: Línea de Tiempo y Reseña Histórica</span>
+                <span style="font-family: var(--font-mono); font-size: 0.85rem; color: #d97706; font-weight: 700;">Hoja 5</span>
+              </a>
+
+              <a href="#" data-target-page="6" style="text-decoration: none; display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #fafaf9; border-radius: 8px; border: 1px solid #e7e5e4; transition: all 0.2s ease;">
+                <span style="font-weight: 600; color: #1e1b4b;"><i class="fa-solid fa-book-open" style="color: #3b82f6; width: 22px;"></i> Módulo III: Conceptos y Definiciones Fundamentales</span>
+                <span style="font-family: var(--font-mono); font-size: 0.85rem; color: #d97706; font-weight: 700;">Hoja 6</span>
+              </a>
+
+              <a href="#" data-target-page="7" style="text-decoration: none; display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #fafaf9; border-radius: 8px; border: 1px solid #e7e5e4; transition: all 0.2s ease;">
+                <span style="font-weight: 600; color: #1e1b4b;"><i class="fa-solid fa-cubes" style="color: #06b6d4; width: 22px;"></i> Módulo IV: Movimiento Armónico Simple (M.A.S.) y Dinámica</span>
+                <span style="font-family: var(--font-mono); font-size: 0.85rem; color: #d97706; font-weight: 700;">Hoja 7</span>
+              </a>
+
+              <a href="#" data-target-page="8" style="text-decoration: none; display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #fafaf9; border-radius: 8px; border: 1px solid #e7e5e4; transition: all 0.2s ease;">
+                <span style="font-weight: 600; color: #1e1b4b;"><i class="fa-solid fa-wave-square" style="color: #10b981; width: 22px;"></i> Módulo V: Cinemática del M.A.S. — Elongación y Posición</span>
+                <span style="font-family: var(--font-mono); font-size: 0.85rem; color: #d97706; font-weight: 700;">Hoja 8</span>
+              </a>
+
+              <a href="#" data-target-page="9" style="text-decoration: none; display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #fafaf9; border-radius: 8px; border: 1px solid #e7e5e4; transition: all 0.2s ease;">
+                <span style="font-weight: 600; color: #1e1b4b;"><i class="fa-solid fa-gauge-high" style="color: #f59e0b; width: 22px;"></i> Módulo VI: Cinemática del M.A.S. — Velocidad y Desfase Temporal</span>
+                <span style="font-family: var(--font-mono); font-size: 0.85rem; color: #d97706; font-weight: 700;">Hoja 9</span>
+              </a>
+
+              <a href="#" data-target-page="10" style="text-decoration: none; display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #fafaf9; border-radius: 8px; border: 1px solid #e7e5e4; transition: all 0.2s ease;">
+                <span style="font-weight: 600; color: #1e1b4b;"><i class="fa-solid fa-bolt" style="color: #ef4444; width: 22px;"></i> Módulo VII: Cinemática del M.A.S. — Aceleración y Resumen</span>
+                <span style="font-family: var(--font-mono); font-size: 0.85rem; color: #d97706; font-weight: 700;">Hoja 10</span>
+              </a>
+
+              <a href="#" data-target-page="11" style="text-decoration: none; display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #eff6ff; border-radius: 8px; border: 1px solid #bfdbfe; transition: all 0.2s ease;">
+                <span style="font-weight: 700; color: #1e40af;"><i class="fa-solid fa-compass-drafting" style="color: #2563eb; width: 22px;"></i> Laboratorio Interactivo: Plano Cartesiano Estilo GeoGebra</span>
+                <span style="font-family: var(--font-mono); font-size: 0.85rem; color: #1e40af; font-weight: 700;">Hoja 11</span>
+              </a>
+
+              <a href="#" data-target-page="12" style="text-decoration: none; display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #fdf2f8; border-radius: 8px; border: 1px solid #fbcfe8; transition: all 0.2s ease;">
+                <span style="font-weight: 700; color: #9d174d;"><i class="fa-solid fa-sliders" style="color: #ec4899; width: 22px;"></i> Laboratorio Interactivo: Simulador Masa-Resorte y Energías</span>
+                <span style="font-family: var(--font-mono); font-size: 0.85rem; color: #9d174d; font-weight: 700;">Hoja 12</span>
+              </a>
+
+              <a href="#" data-target-page="13" style="text-decoration: none; display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #fff7ed; border-radius: 8px; border: 1px solid #fed7aa; transition: all 0.2s ease;">
+                <span style="font-weight: 700; color: #9a3412;"><i class="fa-solid fa-pen-ruler" style="color: #ea580c; width: 22px;"></i> Ejercicios Resueltos Paso a Paso con Código de Colores</span>
+                <span style="font-family: var(--font-mono); font-size: 0.85rem; color: #9a3412; font-weight: 700;">Hoja 13</span>
+              </a>
+
+              <a href="#" data-target-page="14" style="text-decoration: none; display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #fafaf9; border-radius: 8px; border: 1px solid #e7e5e4; transition: all 0.2s ease;">
+                <span style="font-weight: 600; color: #1e1b4b;"><i class="fa-solid fa-spell-check" style="color: #64748b; width: 22px;"></i> Glosario Científico Interactivo con Búsqueda en Vivo</span>
+                <span style="font-family: var(--font-mono); font-size: 0.85rem; color: #d97706; font-weight: 700;">Hoja 14</span>
+              </a>
+
+              <a href="#" data-target-page="15" style="text-decoration: none; display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #fafaf9; border-radius: 8px; border: 1px solid #e7e5e4; transition: all 0.2s ease;">
+                <span style="font-weight: 600; color: #1e1b4b;"><i class="fa-solid fa-graduation-cap" style="color: #64748b; width: 22px;"></i> Referencias Bibliográficas Académicas (Normas APA 7)</span>
+                <span style="font-family: var(--font-mono); font-size: 0.85rem; color: #d97706; font-weight: 700;">Hoja 15</span>
+              </a>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PÁGINA 4: MAPA MENTAL INTERACTIVO
+           ==================================================================== -->
+      <section id="page-4" class="notebook-page page-with-template">
+        <div class="page-inner-content">
+          <div class="page-header-banner">
+            <span class="page-category-tag"><i class="fa-solid fa-diagram-project"></i> Arquitectura Conceptual</span>
+            <span class="page-sequence-indicator">Hoja 4 de 15</span>
+          </div>
+
+          <h2 class="page-title">Mapa Mental del Movimiento Oscilatorio</h2>
+          <p class="page-subtitle">Explorador Conceptual Dinámico: Haz clic sobre cada nodo para examinar su definición</p>
+
+          <div class="figure-container">
+            <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+              <button id="btnOpenMindmapModal" class="btn-modal-trigger" title="Abrir Mapa Mental en Ventana Modal Grande">
+                <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                <span>Modal Grande</span>
+              </button>
+            </div>
+            <div id="mindmapWrapper" class="mindmap-container">
+              <svg id="mindmapSvg" viewBox="0 0 800 420">
+                <defs>
+                  <linearGradient id="gradRoot" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#432874" />
+                    <stop offset="100%" stop-color="#6366f1" />
+                  </linearGradient>
+                  <linearGradient id="gradMas" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#2563eb" />
+                    <stop offset="100%" stop-color="#38bdf8" />
+                  </linearGradient>
+                  <linearGradient id="gradCin" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#059669" />
+                    <stop offset="100%" stop-color="#34d399" />
+                  </linearGradient>
+                  <linearGradient id="gradDin" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#d97706" />
+                    <stop offset="100%" stop-color="#fbbf24" />
+                  </linearGradient>
+                  <linearGradient id="gradEne" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#dc2626" />
+                    <stop offset="100%" stop-color="#f87171" />
+                  </linearGradient>
+                  <linearGradient id="gradApp" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#7c3aed" />
+                    <stop offset="100%" stop-color="#a78bfa" />
+                  </linearGradient>
+                </defs>
+
+                <!-- Conexiones -->
+                <path d="M400,210 Q240,110 160,80" stroke="#cbd5e1" stroke-width="3" fill="none" />
+                <path d="M400,210 Q560,110 640,80" stroke="#cbd5e1" stroke-width="3" fill="none" />
+                <path d="M400,210 Q220,250 140,290" stroke="#cbd5e1" stroke-width="3" fill="none" />
+                <path d="M400,210 Q580,250 660,290" stroke="#cbd5e1" stroke-width="3" fill="none" />
+                <path d="M400,210 Q400,320 400,350" stroke="#cbd5e1" stroke-width="3" fill="none" />
+
+                <!-- Nodo Central -->
+                <g class="mindmap-node" data-node-id="root">
+                  <circle cx="400" cy="210" r="54" fill="url(#gradRoot)" filter="drop-shadow(0 4px 10px rgba(67,40,116,0.35))" />
+                  <text x="400" y="205" fill="#ffffff" font-family="'Outfit', sans-serif" font-weight="bold" font-size="12" text-anchor="middle">MOVIMIENTO</text>
+                  <text x="400" y="222" fill="#fde047" font-family="'Outfit', sans-serif" font-weight="bold" font-size="12" text-anchor="middle">OSCILATORIO</text>
+                </g>
+
+                <!-- Nodo 1: MAS -->
+                <g class="mindmap-node" data-node-id="mas">
+                  <rect x="80" y="50" width="160" height="55" rx="10" fill="url(#gradMas)" filter="drop-shadow(0 3px 6px rgba(0,0,0,0.15))" />
+                  <text x="160" y="75" fill="#ffffff" font-family="'Outfit', sans-serif" font-weight="bold" font-size="12" text-anchor="middle">Movimiento Armónico</text>
+                  <text x="160" y="92" fill="#ffffff" font-family="'Outfit', sans-serif" font-size="11" text-anchor="middle">Simple (M.A.S.)</text>
+                </g>
+
+                <!-- Nodo 2: Cinemática -->
+                <g class="mindmap-node" data-node-id="cinematica">
+                  <rect x="560" y="50" width="160" height="55" rx="10" fill="url(#gradCin)" filter="drop-shadow(0 3px 6px rgba(0,0,0,0.15))" />
+                  <text x="640" y="75" fill="#ffffff" font-family="'Outfit', sans-serif" font-weight="bold" font-size="12" text-anchor="middle">Cinemática del M.A.S.</text>
+                  <text x="640" y="92" fill="#ffffff" font-family="'Outfit', sans-serif" font-size="11" text-anchor="middle">x(t), v(t), a(t)</text>
+                </g>
+
+                <!-- Nodo 3: Dinámica -->
+                <g class="mindmap-node" data-node-id="dinamica">
+                  <rect x="60" y="265" width="160" height="55" rx="10" fill="url(#gradDin)" filter="drop-shadow(0 3px 6px rgba(0,0,0,0.15))" />
+                  <text x="140" y="290" fill="#ffffff" font-family="'Outfit', sans-serif" font-weight="bold" font-size="12" text-anchor="middle">Dinámica & Newton</text>
+                  <text x="140" y="307" fill="#ffffff" font-family="'Outfit', sans-serif" font-size="11" text-anchor="middle">Ley de Hooke: F = -kx</text>
+                </g>
+
+                <!-- Nodo 4: Energía -->
+                <g class="mindmap-node" data-node-id="energia">
+                  <rect x="580" y="265" width="160" height="55" rx="10" fill="url(#gradEne)" filter="drop-shadow(0 3px 6px rgba(0,0,0,0.15))" />
+                  <text x="660" y="290" fill="#ffffff" font-family="'Outfit', sans-serif" font-weight="bold" font-size="12" text-anchor="middle">Conservación Energética</text>
+                  <text x="660" y="307" fill="#ffffff" font-family="'Outfit', sans-serif" font-size="11" text-anchor="middle">Ec + Ep = E mecánica</text>
+                </g>
+
+                <!-- Nodo 5: Aplicaciones -->
+                <g class="mindmap-node" data-node-id="aplicaciones">
+                  <rect x="310" y="340" width="180" height="50" rx="10" fill="url(#gradApp)" filter="drop-shadow(0 3px 6px rgba(0,0,0,0.15))" />
+                  <text x="400" y="362" fill="#ffffff" font-family="'Outfit', sans-serif" font-weight="bold" font-size="12" text-anchor="middle">Sistemas & Aplicaciones</text>
+                  <text x="400" y="378" fill="#ffffff" font-family="'Outfit', sans-serif" font-size="11" text-anchor="middle">Péndulo, Resorte, Circuitos</text>
+                </g>
+              </svg>
+
+              <!-- Tarjeta de Información Dinámica -->
+              <div id="mindmapInfoCard" class="mindmap-info-card">
+                <h5 id="mindmapInfoTitle" style="color: #432874; font-family: var(--font-heading); font-size: 1rem; margin-bottom: 4px;"></h5>
+                <p id="mindmapInfoDesc" style="margin: 0; font-size: 0.88rem; color: #334155;"></p>
+              </div>
+            </div>
+            <span class="figure-caption"><strong>Ilustración 1:</strong> Mapa conceptual interactivo de las ramas teóricas y dinámicas del Movimiento Oscilatorio.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PÁGINA 5: LÍNEA DE TIEMPO Y RESEÑA HISTÓRICA
+           ==================================================================== -->
+      <section id="page-5" class="notebook-page page-with-template">
+        <div class="page-inner-content">
+          <div class="page-header-banner">
+            <span class="page-category-tag"><i class="fa-solid fa-landmark"></i> Evolución Científica</span>
+            <span class="page-sequence-indicator">Hoja 5 de 15</span>
+          </div>
+
+          <h2 class="page-title">Línea de Tiempo y Reseña Histórica</h2>
+          <p class="page-subtitle">De las observaciones del isocronismo a la formulación formal del análisis armónico</p>
+
+          <div class="timeline">
+            
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">1583 &bull; Galileo Galilei</span>
+                <h4 class="timeline-title">Descubrimiento del Isocronismo del Péndulo</h4>
+                <p style="margin: 0; font-size: 0.9rem;">
+                  Observando la oscilación de un candelabro en la catedral de Pisa y midiendo el tiempo con su propio pulso, Galileo dedujo que el periodo de oscilación para pequeñas amplitudes es independiente de la amplitud del movimiento.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">1676 &bull; Robert Hooke</span>
+                <h4 class="timeline-title">Formulación de la Ley de Elasticidad</h4>
+                <p style="margin: 0; font-size: 0.9rem;">
+                  Hooke publicó su célebre anagrama <em>"ceiiinosssttuv"</em>, cuya solución en latín <em>"Ut tensio, sic vis"</em> (Como es la tensión, así es la fuerza) sentó el postulado de la fuerza recuperadora lineal: $F = -kx$.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">1673 &bull; Christiaan Huygens</span>
+                <h4 class="timeline-title">Tratado del Reloj de Péndulo (Horologium Oscillatorium)</h4>
+                <p style="margin: 0; font-size: 0.9rem;">
+                  Desarrolló el primer reloj de péndulo de precisión astronómica, demostró matemáticamente que la cicloide es una curva tautócrona e isócrona perfecta, y derivó la fórmula clásica del periodo pendular: $T = 2\pi\sqrt{L/g}$.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">1687 &bull; Isaac Newton</span>
+                <h4 class="timeline-title">Principia Mathematica y Ecuación Dinámica</h4>
+                <p style="margin: 0; font-size: 0.9rem;">
+                  La segunda ley del movimiento $F = m \cdot a$ combinada con la fuerza recuperadora de Hooke permitió modelar el movimiento oscilatorio como una ecuación diferencial analítica de segundo orden.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">1739 &bull; Leonhard Euler</span>
+                <h4 class="timeline-title">Solución Analítica Rigurosa mediante Exponenciales Complejas</h4>
+                <p style="margin: 0; font-size: 0.9rem;">
+                  Euler resolvió formalmente las ecuaciones diferenciales lineales con coeficientes constantes empleando la célebre identidad $e^{i\theta} = \cos\theta + i\sin\theta$, conectando el M.A.S. con el movimiento circular en el plano complejo.
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-content">
+                <span class="timeline-year">1822 &bull; Joseph Fourier</span>
+                <h4 class="timeline-title">Teoría Analítica del Calor y Series Armónicas</h4>
+                <p style="margin: 0; font-size: 0.9rem;">
+                  Demostró que toda oscilación periódica arbitraria, por compleja que sea, puede descomponerse como una suma infinita de oscilaciones armónicas simples (M.A.S.) de frecuencias múltiplos.
+                </p>
+              </div>
+            </div>
+
+          </div>
+          <span class="figure-caption"><strong>Ilustración 2:</strong> Línea temporal del desarrollo histórico y matemático de la teoría de oscilaciones.</span>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PÁGINA 6: FUNDAMENTOS DEL MOVIMIENTO OSCILATORIO
+           ==================================================================== -->
+      <section id="page-6" class="notebook-page page-with-template">
+        <div class="page-inner-content">
+          <div class="page-header-banner">
+            <span class="page-category-tag"><i class="fa-solid fa-atom"></i> Fundamentos Teóricos</span>
+            <span class="page-sequence-indicator">Hoja 6 de 15</span>
+          </div>
+
+          <h2 class="page-title">Conceptos y Definiciones Fundamentales</h2>
+          <p class="page-subtitle">Elongación, Amplitud, Periodo, Frecuencia y Unidades en el Sistema Internacional (S.I.)</p>
+
+          <h3 class="section-heading"><i class="fa-solid fa-circle-dot"></i> Movimiento Periódico y Oscilatorio</h3>
+          <p>
+            Se define como <strong>movimiento periódico</strong> a aquel desplazamiento mecánico que se repite exactamente a intervalos de tiempo regulares. Si además este movimiento ocurre en vaivén a ambos lados de una posición de equilibrio estable, se denomina <strong>movimiento oscilatorio o vibratorio</strong>.
+          </p>
+
+          <div class="concept-callout">
+            <div class="concept-callout-title"><i class="fa-solid fa-key"></i> Magnitudes Cinemáticas Fundamentales:</div>
+            <ul style="margin: 0; padding-left: 18px; font-size: 0.92rem;">
+              <li><strong>Posición de Equilibrio ($x = 0$):</strong> Punto en el cual la fuerza neta ejercida sobre el cuerpo es nula ($\Sigma F = 0$).</li>
+              <li><strong>Elongación ($x$ o $y$):</strong> Distancia y signo desde la posición de equilibrio hasta el cuerpo en cualquier instante temporal $t$. En el S.I. se mide en <strong>metros (m)</strong>.</li>
+              <li><strong>Amplitud ($A$):</strong> Magnitud del desplazamiento máximo respecto a la posición de equilibrio ($A = |x_{\max}|$). Siempre es un valor escalar estrictamente positivo ($A > 0$). En el S.I. se mide en <strong>metros (m)</strong>.</li>
+              <li><strong>Ciclo u Oscilación Completa:</strong> Trayectoria cerrada en la que la partícula parte de un estado cinemático (posición y velocidad) y retorna por primera vez al mismo estado.</li>
+              <li><strong>Periodo ($T$):</strong> Intervalo de tiempo requerido para completar una oscilación íntegra. Su unidad en el S.I. es el <strong>segundo (s)</strong>.</li>
+              <li><strong>Frecuencia ($f$ o $\nu$):</strong> Número de ciclos completos efectuados por unidad de tiempo. Corresponde al inverso multiplicativo del periodo.</li>
+            </ul>
+          </div>
+
+          <div class="equation-box">
+            <div class="equation-content">
+              $$f = \frac{1}{T} \quad \Longleftrightarrow \quad T = \frac{1}{f}$$
+            </div>
+            <span class="equation-number">Ecuación 1</span>
+          </div>
+
+          <h3 class="section-heading"><i class="fa-solid fa-table-cells"></i> Unidades en el Sistema Internacional de Medidas (S.I.)</h3>
+          <p>
+            La unidad fundamental de frecuencia en el Sistema Internacional es el <strong>Hertz o Hercio (Hz)</strong>, nombrado en honor al físico alemán Heinrich Rudolf Hertz. Equivale formalmente a un ciclo o vibración por segundo:
+          </p>
+
+          <div class="equation-box">
+            <div class="equation-content">
+              $$1\text{ Hz} = 1\text{ s}^{-1} = 1\frac{\text{ciclo}}{\text{s}}$$
+            </div>
+            <span class="equation-number">Ecuación 2</span>
+          </div>
+
+          <div class="table-container">
+            <table class="academic-table">
+              <thead>
+                <tr>
+                  <th>Magnitud Física</th>
+                  <th>Símbolo</th>
+                  <th>Unidad en el S.I.</th>
+                  <th>Símbolo S.I.</th>
+                  <th>Definición / Relación Dimensional</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Elongación</strong></td>
+                  <td>$x$</td>
+                  <td>Metro</td>
+                  <td>$\text{m}$</td>
+                  <td>$[L]$</td>
+                </tr>
+                <tr>
+                  <td><strong>Amplitud</strong></td>
+                  <td>$A$</td>
+                  <td>Metro</td>
+                  <td>$\text{m}$</td>
+                  <td>$[L]$ (Máximo valor $|x|$)</td>
+                </tr>
+                <tr>
+                  <td><strong>Periodo</strong></td>
+                  <td>$T$</td>
+                  <td>Segundo</td>
+                  <td>$\text{s}$</td>
+                  <td>$[T]$ (Tiempo de 1 ciclo completo)</td>
+                </tr>
+                <tr>
+                  <td><strong>Frecuencia Ordinaria</strong></td>
+                  <td>$f$</td>
+                  <td>Hertz</td>
+                  <td>$\text{Hz}$</td>
+                  <td>$[T^{-1}] = \text{ciclos} / \text{s}$</td>
+                </tr>
+                <tr>
+                  <td><strong>Frecuencia Angular</strong></td>
+                  <td>$\omega$</td>
+                  <td>Radián por segundo</td>
+                  <td>$\text{rad/s}$</td>
+                  <td>$[T^{-1}] \quad \omega = 2\pi f = \frac{2\pi}{T}$</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="table-caption"><strong>Tabla 1:</strong> Magnitudes cinemáticas esenciales del movimiento oscilatorio y sus dimensiones físicas en el S.I.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PÁGINA 7: MOVIMIENTO ARMÓNICO SIMPLE (M.A.S.)
+           ==================================================================== -->
+      <section id="page-7" class="notebook-page page-with-template">
+        <div class="page-inner-content">
+          <div class="page-header-banner">
+            <span class="page-category-tag"><i class="fa-solid fa-cubes"></i> Dinámica Clásica</span>
+            <span class="page-sequence-indicator">Hoja 7 de 15</span>
+          </div>
+
+          <h2 class="page-title">Movimiento Armónico Simple (M.A.S.)</h2>
+          <p class="page-subtitle">Deducción de la Ecuación Diferencial Ordinaria mediante la Segunda Ley de Newton</p>
+
+          <p>
+            El <strong>Movimiento Armónico Simple (M.A.S.)</strong> es un modelo idealizado de movimiento periódico unidimensional donde la fuerza resultante que actúa sobre la partícula es una <strong>fuerza recuperadora elástica</strong>, dirigida siempre hacia la posición de equilibrio y con magnitud directamente proporcional a la elongación.
+          </p>
+
+          <h3 class="section-heading"><i class="fa-solid fa-scale-balanced"></i> Deducción Paso a Paso de la Ecuación Diferencial</h3>
+
+          <p>
+            <strong>Paso 1: Aplicación de la Ley de Hooke.</strong> La fuerza elástica recuperadora generada por un resorte ideal de constante elástica $k$ está gobernada por:
+          </p>
+
+          <div class="equation-box">
+            <div class="equation-content">
+              $$F_{\text{elástica}} = -k \cdot x$$
+            </div>
+            <span class="equation-number">Ecuación 3</span>
+          </div>
+
+          <p>
+            <em>El signo negativo expresa la naturaleza restauradora de la fuerza: si $x > 0$, la fuerza apunta hacia la izquierda ($F < 0$); si $x < 0$, la fuerza apunta hacia la derecha ($F > 0$).</em>
+          </p>
+
+          <p>
+            <strong>Paso 2: Segunda Ley de Newton.</strong> Para un cuerpo de masa $m$ que se desplaza sobre una superficie horizontal sin fricción:
+          </p>
+
+          <div class="equation-box">
+            <div class="equation-content">
+              $$\Sigma F = m \cdot a = m \cdot \frac{d^2x}{dt^2}$$
+            </div>
+            <span class="equation-number">Ecuación 4</span>
+          </div>
+
+          <p>
+            <strong>Paso 3: Igualación de Fuerzas Dinámicas.</strong> Igualando las Ecuaciones 3 y 4:
+          </p>
+
+          <div class="equation-box">
+            <div class="equation-content">
+              $$m \cdot \frac{d^2x}{dt^2} = -k \cdot x \quad \Longrightarrow \quad m \cdot \frac{d^2x}{dt^2} + k \cdot x = 0$$
+            </div>
+            <span class="equation-number">Ecuación 5</span>
+          </div>
+
+          <p>
+            <strong>Paso 4: Forma Canónica de la Ecuación del M.A.S.</strong> Dividiendo toda la ecuación entre la masa inercial $m > 0$:
+          </p>
+
+          <div class="equation-box">
+            <div class="equation-content">
+              $$\frac{d^2x}{dt^2} + \left(\frac{k}{m}\right) x = 0$$
+            </div>
+            <span class="equation-number">Ecuación 6</span>
+          </div>
+
+          <p>
+            Definiendo el parámetro fundamental denominado <strong>frecuencia angular propia o natural ($\omega$)</strong>:
+          </p>
+
+          <div class="equation-box">
+            <div class="equation-content">
+              $$\omega = \sqrt{\frac{k}{m}} \quad \Longleftrightarrow \quad \omega^2 = \frac{k}{m}$$
+            </div>
+            <span class="equation-number">Ecuación 7</span>
+          </div>
+
+          <p>
+            Obtenemos la <strong>Ecuación Diferencial Fundamental del Movimiento Armónico Simple</strong>:
+          </p>
+
+          <div class="equation-box" style="border-left: 5px solid var(--primary); background: #fdfbf7;">
+            <div class="equation-content">
+              $$\frac{d^2x}{dt^2} + \omega^2 x = 0$$
+            </div>
+            <span class="equation-number">Ecuación 8</span>
+          </div>
+
+          <p>
+            Esta es una ecuación diferencial ordinaria, lineal, homogénea de segundo orden con coeficientes constantes. Cuya solución general analítica describe una función senoidal o cosenoidal en el dominio del tiempo.
+          </p>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PÁGINA 8: CINEMÁTICA DEL M.A.S. — ELONGACIÓN
+           ==================================================================== -->
+      <section id="page-8" class="notebook-page page-with-template">
+        <div class="page-inner-content">
+          <div class="page-header-banner">
+            <span class="page-category-tag"><i class="fa-solid fa-wave-square"></i> Cinemática Analítica</span>
+            <span class="page-sequence-indicator">Hoja 8 de 15</span>
+          </div>
+
+          <h2 class="page-title">Cinemática del M.A.S. — Elongación</h2>
+          <p class="page-subtitle">Ecuación Temporal de Posición y Círculo de Referencia (Conexión M.A.S. y M.C.U.)</p>
+
+          <p>
+            La solución general de la Ecuación Diferencial del M.A.S. ($\ddot{x} + \omega^2 x = 0$) puede expresarse matemáticamente de forma canónica mediante la función coseno:
+          </p>
+
+          <div class="equation-box" style="border: 2px solid var(--primary-light);">
+            <div class="equation-content">
+              $$x(t) = A \cdot \cos(\omega t + \phi_0)$$
+            </div>
+            <span class="equation-number">Ecuación 9</span>
+          </div>
+
+          <h3 class="section-heading"><i class="fa-solid fa-circle-question"></i> Significado Físico de las Variables</h3>
+          <ul>
+            <li><strong>$x(t)$ [Elongación]:</strong> Posición de la masa en función del tiempo respecto al origen. Acotada en el intervalo cerrado $[-A, +A]$.</li>
+            <li><strong>$A$ [Amplitud]:</strong> Elongación máxima alcanzable ($A > 0$). Depende de las condiciones iniciales de energía suministrada al sistema.</li>
+            <li><strong>$\omega$ [Frecuencia Angular]:</strong> Rapidez de variación de la fase angular ($\omega = 2\pi/T = 2\pi f$). Determina la rapidez de oscilación.</li>
+            <li><strong>$\Phi(t) = \omega t + \phi_0$ [Fase Instantánea]:</strong> Argumento del coseno, medido en radianes ($\text{rad}$). Describe el estado del ciclo en el instante $t$.</li>
+            <li><strong>$\phi_0$ [Fase Inicial o Constante de Fase]:</strong> Ángulo de fase en el instante inicial $t = 0$. Determina la posición y sentido inicial del movimiento.</li>
+          </ul>
+
+          <h3 class="section-heading"><i class="fa-solid fa-circle-notch"></i> El Círculo de Referencia: M.A.S. como Proyección del M.C.U.</h3>
+          <p>
+            Existe una equivalencia geométrica exacta: el Movimiento Armónico Simple es idéntico a la <strong>proyección ortogonal sobre el eje diametral</strong> de una partícula que describe un Movimiento Circular Uniforme (M.C.U.) con radio $A$ y velocidad angular constante $\omega$.
+          </p>
+
+          <div class="figure-container">
+            <div style="display: flex; justify-content: flex-end; margin-bottom: 8px;">
+              <button id="btnOpenRefModal" class="btn-modal-trigger" title="Abrir Círculo de Referencia en Ventana Modal Grande">
+                <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                <span>Modal Grande</span>
+              </button>
+            </div>
+            <div id="refCircleBox" style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 12px; height: 210px; width: 100%; position: relative; overflow: hidden; box-shadow: var(--shadow-sm);">
+              <canvas id="refCircleCanvas" style="width: 100%; height: 100%; display: block;"></canvas>
+            </div>
+            <span class="figure-caption"><strong>Ilustración 3:</strong> Círculo de referencia animado en tiempo real. Proyección ortogonal del radio vector sobre el eje horizontal que engendra la función cosenoidal $x(t) = A \cos(\omega t + \phi)$.</span>
+          </div>
+
+          <div class="concept-callout">
+            <div class="concept-callout-title"><i class="fa-solid fa-lightbulb"></i> Determinación de la Fase Inicial $\phi_0$:</div>
+            <p style="margin: 0; font-size: 0.92rem;">
+              Evaluando en $t = 0$: si el oscilador se suelta del extremo positivo en reposo ($x(0) = A$), entonces $\cos(\phi_0) = 1 \implies \mathbf{\phi_0 = 0}$. Si parte de la posición de equilibrio moviéndose hacia la derecha ($x(0) = 0, v(0) > 0$), entonces $\mathbf{\phi_0 = -\pi/2}$.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PÁGINA 9: CINEMÁTICA DEL M.A.S. — VELOCIDAD
+           ==================================================================== -->
+      <section id="page-9" class="notebook-page page-with-template">
+        <div class="page-inner-content">
+          <div class="page-header-banner">
+            <span class="page-category-tag"><i class="fa-solid fa-gauge-high"></i> Cinemática Diferencial</span>
+            <span class="page-sequence-indicator">Hoja 9 de 15</span>
+          </div>
+
+          <h2 class="page-title">Cinemática del M.A.S. — Velocidad</h2>
+          <p class="page-subtitle">Deducción de $v(t)$, Velocidad Máxima, Desfase de $\pi/2$ y Relación en Función de la Posición $v(x)$</p>
+
+          <h3 class="section-heading"><i class="fa-solid fa-calculator"></i> Demostración Paso a Paso de la Derivada</h3>
+          <p>
+            La velocidad instantánea $v(t)$ corresponde a la primera derivada temporal de la función de elongación $x(t)$:
+          </p>
+
+          <div class="equation-box">
+            <div class="equation-content">
+              $$v(t) = \frac{dx}{dt} = \frac{d}{dt}\Big[ A \cdot \cos(\omega t + \phi_0) \Big]$$
+            </div>
+            <span class="equation-number">Ecuación 10</span>
+          </div>
+
+          <p>
+            Aplicando la regla de la cadena del cálculo diferencial, sabiendo que $\frac{d}{du}[\cos u] = -\sin u$ y que $\frac{d}{dt}[\omega t + \phi_0] = \omega$:
+          </p>
+
+          <div class="equation-box" style="border: 2px solid #16a34a;">
+            <div class="equation-content">
+              $$v(t) = -\omega A \cdot \sin(\omega t + \phi_0)$$
+            </div>
+            <span class="equation-number">Ecuación 11</span>
+          </div>
+
+          <p>
+            Empleando la identidad trigonométrica $\cos\left(\theta + \frac{\pi}{2}\right) = -\sin\theta$, podemos reescribir la velocidad en términos de coseno:
+          </p>
+
+          <div class="equation-box">
+            <div class="equation-content">
+              $$v(t) = \omega A \cdot \cos\left(\omega t + \phi_0 + \frac{\pi}{2}\right)$$
+            </div>
+            <span class="equation-number">Ecuación 12</span>
+          </div>
+
+          <div class="concept-callout">
+            <div class="concept-callout-title"><i class="fa-solid fa-circle-exclamation"></i> Consecuencia Física Fundamental — Desfase de $\pi/2$ rad ($90^\circ$):</div>
+            <p style="margin: 0; font-size: 0.92rem;">
+              La velocidad está <strong>adelantada un cuarto de ciclo ($\pi/2$ radianes o $90^\circ$)</strong> respecto a la elongación. Esto implica que cuando la elongación es máxima ($x = \pm A$), la velocidad es nula ($v = 0$); y cuando la partícula pasa por la posición de equilibrio ($x = 0$), la velocidad alcanza su magnitud máxima.
+            </p>
+          </div>
+
+          <h3 class="section-heading"><i class="fa-solid fa-bolt"></i> Velocidad en Función de la Posición: $v(x)$</h3>
+          <p>
+            Podemos eliminar explícitamente el tiempo $t$ empleando la identidad fundamental de la trigonometría: $\sin^2\theta + \cos^2\theta = 1$.
+          </p>
+          <p>
+            De la Ecuación 9: $\cos(\omega t + \phi_0) = \frac{x}{A}$. De la Ecuación 11: $\sin(\omega t + \phi_0) = -\frac{v}{\omega A}$.
+          </p>
+
+          <div class="equation-box">
+            <div class="equation-content">
+              $$\left(\frac{x}{A}\right)^2 + \left(-\frac{v}{\omega A}\right)^2 = 1 \quad \Longrightarrow \quad \frac{v^2}{\omega^2 A^2} = 1 - \frac{x^2}{A^2}$$
+            </div>
+            <span class="equation-number">Ecuación 13</span>
+          </div>
+
+          <p>
+            Multiplicando ambos miembros por $\omega^2 A^2$ y extrayendo raíz cuadrada:
+          </p>
+
+          <div class="equation-box" style="background: #f0fdf4; border: 2px solid #86efac;">
+            <div class="equation-content">
+              $$v(x) = \pm \omega \sqrt{A^2 - x^2}$$
+            </div>
+            <span class="equation-number">Ecuación 14</span>
+          </div>
+
+          <p>
+            De esta ecuación se comprueban inmediatamente los valores límite:
+          </p>
+          <ul>
+            <li>En los extremos ($x = \pm A$): $v = \pm \omega \sqrt{A^2 - A^2} = \mathbf{0}$.</li>
+            <li>En el equilibrio ($x = 0$): $v = \pm \omega \sqrt{A^2 - 0} = \pm \omega A = \mathbf{\pm v_{\max}}$.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PÁGINA 10: CINEMÁTICA DEL M.A.S. — ACELERACIÓN
+           ==================================================================== -->
+      <section id="page-10" class="notebook-page page-with-template">
+        <div class="page-inner-content">
+          <div class="page-header-banner">
+            <span class="page-category-tag"><i class="fa-solid fa-bolt"></i> Cinemática de 2do Orden</span>
+            <span class="page-sequence-indicator">Hoja 10 de 15</span>
+          </div>
+
+          <h2 class="page-title">Cinemática del M.A.S. — Aceleración</h2>
+          <p class="page-subtitle">Derivada Temporal, Aceleración Máxima, Desfase de $\pi$ y Tabla Comparativa de Estados</p>
+
+          <h3 class="section-heading"><i class="fa-solid fa-square-root-variable"></i> Demostración Paso a Paso de la Aceleración</h3>
+          <p>
+            La aceleración instantánea $a(t)$ es la derivada temporal de la velocidad $v(t)$:
+          </p>
+
+          <div class="equation-box">
+            <div class="equation-content">
+              $$a(t) = \frac{dv}{dt} = \frac{d}{dt}\Big[ -\omega A \cdot \sin(\omega t + \phi_0) \Big]$$
+            </div>
+            <span class="equation-number">Ecuación 15</span>
+          </div>
+
+          <p>
+            Derivando respecto al tiempo mediante regla de la cadena:
+          </p>
+
+          <div class="equation-box" style="border: 2px solid #dc2626;">
+            <div class="equation-content">
+              $$a(t) = -\omega^2 A \cdot \cos(\omega t + \phi_0)$$
+            </div>
+            <span class="equation-number">Ecuación 16</span>
+          </div>
+
+          <p>
+            Dado que $x(t) = A \cos(\omega t + \phi_0)$ (Ecuación 9), sustituyendo directamente obtenemos la <strong>relación lineal fundamental de la aceleración con la posición</strong>:
+          </p>
+
+          <div class="equation-box" style="background: #fef2f2; border: 2px solid #fca5a5;">
+            <div class="equation-content">
+              $$a(x) = -\omega^2 \cdot x$$
+            </div>
+            <span class="equation-number">Ecuación 17</span>
+          </div>
+
+          <div class="concept-callout">
+            <div class="concept-callout-title"><i class="fa-solid fa-arrows-left-right"></i> Propiedad Fundamental — Desfase de $\pi$ radianes ($180^\circ$):</div>
+            <p style="margin: 0; font-size: 0.92rem;">
+              La aceleración es siempre directamente proporcional a la elongación pero con <strong>sentido opuesto</strong> (desfasada exactamente $\pi$ radianes o medio ciclo respecto a la posición). Cuando la posición es positiva ($x > 0$), la aceleración apunta en sentido negativo ($a < 0$), actuando como agente desacelerador y restaurador.
+            </p>
+          </div>
+
+          <h3 class="section-heading"><i class="fa-solid fa-table"></i> Tabla Comparativa de Estados Cinemáticos</h3>
+          <div class="table-container">
+            <table class="academic-table">
+              <thead>
+                <tr>
+                  <th>Posición del Oscilador</th>
+                  <th>Elongación $x$</th>
+                  <th>Velocidad $v$</th>
+                  <th>Aceleración $a$</th>
+                  <th>Fuerza Neta $F$</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Extremo Derecho (+A)</strong></td>
+                  <td>$+A$ (Máxima positiva)</td>
+                  <td>$0$ (Masa se detiene)</td>
+                  <td>$-\omega^2 A$ (Máxima negativa)</td>
+                  <td>$-kA$ (Máxima hacia la izq.)</td>
+                </tr>
+                <tr>
+                  <td><strong>Paso por Equilibrio ($\rightarrow$)</strong></td>
+                  <td>$0$</td>
+                  <td>$+v_{\max} = +\omega A$</td>
+                  <td>$0$</td>
+                  <td>$0$ (Fuerza neta nula)</td>
+                </tr>
+                <tr>
+                  <td><strong>Extremo Izquierdo (-A)</strong></td>
+                  <td>$-A$ (Máxima negativa)</td>
+                  <td>$0$ (Masa se detiene)</td>
+                  <td>$+\omega^2 A$ (Máxima positiva)</td>
+                  <td>$+kA$ (Máxima hacia la der.)</td>
+                </tr>
+                <tr>
+                  <td><strong>Paso por Equilibrio ($\leftarrow$)</strong></td>
+                  <td>$0$</td>
+                  <td>$-v_{\max} = -\omega A$</td>
+                  <td>$0$</td>
+                  <td>$0$ (Fuerza neta nula)</td>
+                </tr>
+              </tbody>
+            </table>
+            <span class="table-caption"><strong>Tabla 2:</strong> Comparativa rigurosa de los estados cinemáticos y dinámicos del oscilador armónico simple en los puntos críticos de su trayectoria.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PÁGINA 11: PLANO CARTESIANO INTERACTIVO ESTILO GEOGEBRA
+           ==================================================================== -->
+      <section id="page-11" class="notebook-page page-with-template">
+        <div class="page-inner-content">
+          <div class="page-header-banner">
+            <span class="page-category-tag"><i class="fa-solid fa-compass-drafting"></i> Laboratorio Gráfico</span>
+            <span class="page-sequence-indicator">Hoja 11 de 15</span>
+          </div>
+
+          <h2 class="page-title">Plano Cartesiano Interactivo "GeoGebra"</h2>
+          <p class="page-subtitle">Lienzo Milimetrado con Control de Escalas, Reglas Dinámicas, Zoom, Pan e Inspección de Curvas</p>
+
+          <p>
+            Examina en tiempo real las tres curvas cinemáticas del M.A.S. sincronizadas. Utiliza la barra de herramientas flotante o interactúa directamente con el ratón/pantalla táctil (arrastrar, rueda para zoom, selección de puntos).
+          </p>
+
+          <div id="geogebraWrapper" class="geogebra-wrapper">
+            
+            <!-- Barra de Herramientas Estilo GeoGebra -->
+            <div class="geogebra-toolbar">
+              <div class="toolbar-group">
+                <button id="geoPan" class="geo-btn geo-btn-tool active" title="Arrastrar Lienzo (Pan)">
+                  <i class="fa-solid fa-hand"></i>
+                </button>
+                <button id="geoSelect" class="geo-btn geo-btn-tool" title="Inspeccionar Coordenadas">
+                  <i class="fa-solid fa-crosshairs"></i>
+                </button>
+                <button id="geoZoomIn" class="geo-btn" title="Acercar (Zoom In)">
+                  <i class="fa-solid fa-magnifying-glass-plus"></i>
+                </button>
+                <button id="geoZoomOut" class="geo-btn" title="Alejar (Zoom Out)">
+                  <i class="fa-solid fa-magnifying-glass-minus"></i>
+                </button>
+                <button id="geoReset" class="geo-btn" title="Restablecer Vista Original">
+                  <i class="fa-solid fa-rotate-left"></i>
+                </button>
+              </div>
+
+              <!-- Menú de Paleta de Estilos -->
+              <div class="toolbar-group" style="position: relative;">
+                <button id="geoPalette" class="geo-btn" title="Personalizar Estilos de Gráfica">
+                  <i class="fa-solid fa-palette"></i>
+                </button>
+                
+                <div id="geoPaletteMenu" class="geo-palette-menu">
+                  <div class="palette-item">
+                    <span class="palette-label">Color de Elongación:</span>
+                    <div class="color-swatches">
+                      <div class="swatch selected" data-color="#2563eb" style="background: #2563eb;"></div>
+                      <div class="swatch" data-color="#7c3aed" style="background: #7c3aed;"></div>
+                      <div class="swatch" data-color="#059669" style="background: #059669;"></div>
+                      <div class="swatch" data-color="#d97706" style="background: #d97706;"></div>
+                    </div>
+                  </div>
+                  <div class="palette-item">
+                    <span class="palette-label">Grosor de Trazo:</span>
+                    <select id="geoLineWidth" style="width: 100%; padding: 4px; border-radius: 4px; border: 1px solid #cbd5e1; font-size: 0.85rem;">
+                      <option value="1.5">Fino (1.5 px)</option>
+                      <option value="2.5" selected>Normal (2.5 px)</option>
+                      <option value="4.0">Grueso (4.0 px)</option>
+                    </select>
+                  </div>
+                  <div class="palette-item" style="margin: 0;">
+                    <span class="palette-label">Estilo de Trazo:</span>
+                    <select id="geoLineDash" style="width: 100%; padding: 4px; border-radius: 4px; border: 1px solid #cbd5e1; font-size: 0.85rem;">
+                      <option value="solid" selected>Línea Continua</option>
+                      <option value="dashed">Guiones</option>
+                      <option value="dotted">Puntos</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Checkboxes de Selección de Curvas -->
+              <div class="toolbar-group">
+                <label style="display: inline-flex; align-items: center; gap: 4px; font-size: 0.82rem; font-weight: 600; color: #2563eb; cursor: pointer;">
+                  <input type="checkbox" id="chkShowX" checked> $x(t)$
+                </label>
+                <label style="display: inline-flex; align-items: center; gap: 4px; font-size: 0.82rem; font-weight: 600; color: #16a34a; cursor: pointer;">
+                  <input type="checkbox" id="chkShowV" checked> $v(t)$
+                </label>
+                <label style="display: inline-flex; align-items: center; gap: 4px; font-size: 0.82rem; font-weight: 600; color: #dc2626; cursor: pointer;">
+                  <input type="checkbox" id="chkShowA" checked> $a(t)$
+                </label>
+              </div>
+
+              <!-- Botón para Ventana Modal Grande Colapsable -->
+              <div class="toolbar-group" style="margin-left: auto;">
+                <button id="btnOpenGeoModal" class="btn-modal-trigger" title="Abrir Plano Cartesiano en Ventana Modal Grande">
+                  <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                  <span>Modal Grande</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Contenedor del Canvas con Papel Milimetrado -->
+            <div class="canvas-container">
+              <canvas id="geogebraCanvas"></canvas>
+              <div id="canvasCoordHud" class="canvas-hud">
+                t = 0.00 s | y = 0.00
+              </div>
+            </div>
+
+            <!-- Leyenda y Estados Sincronizados -->
+            <div class="canvas-legend">
+              <div class="legend-chip">
+                <span class="legend-color-box" style="background: #2563eb;"></span>
+                <span style="color: #2563eb;">Elongación $x(t) = A\cos(\omega t)$</span>
+              </div>
+              <div class="legend-chip">
+                <span class="legend-color-box" style="background: #16a34a;"></span>
+                <span style="color: #16a34a;">Velocidad $v(t) = -\omega A\sin(\omega t)$</span>
+              </div>
+              <div class="legend-chip">
+                <span class="legend-color-box" style="background: #dc2626;"></span>
+                <span style="color: #dc2626;">Aceleración $a(t) = -\omega^2 A\cos(\omega t)$</span>
+              </div>
+            </div>
+
+          </div>
+          <span class="figure-caption"><strong>Ilustración 4:</strong> Plano cartesiano interactivo estilo GeoGebra con cuadrícula milimetrada, reglas y marcas dinámicas sobre los ejes, demostrando los desfases de $\pi/2$ y $\pi$.</span>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PÁGINA 12: SIMULADOR FÍSICO PREMIUM (MASA-RESORTE Y ENERGÍAS)
+           ==================================================================== -->
+      <section id="page-12" class="notebook-page page-with-template">
+        <div class="page-inner-content">
+          <div class="page-header-banner">
+            <span class="page-category-tag"><i class="fa-solid fa-sliders"></i> Simulación Física</span>
+            <span class="page-sequence-indicator">Hoja 12 de 15</span>
+          </div>
+
+          <h2 class="page-title">Laboratorio Virtual de Masa-Resorte</h2>
+          <p class="page-subtitle">Simulación Dinámica en Tiempo Real con Vectores Vectoriales y Conservación Energética</p>
+
+          <div id="simulatorWrapper" class="simulator-wrapper">
+            <!-- Lienzo de Simulación Mecánica -->
+            <canvas id="simDisplayCanvas" class="sim-display-canvas"></canvas>
+
+            <div class="sim-controls-panel">
+              
+              <!-- Sliders de Control Físico -->
+              <div class="sim-sliders-grid">
+                
+                <div class="sim-slider-item">
+                  <div class="sim-slider-header">
+                    <span>Masa Inercial ($m$):</span>
+                    <span id="simMassVal" class="sim-value-pill">1.0 kg</span>
+                  </div>
+                  <input type="range" id="simMass" class="custom-range" min="0.2" max="5.0" step="0.1" value="1.0">
+                </div>
+
+                <div class="sim-slider-item">
+                  <div class="sim-slider-header">
+                    <span>Constante Elástica ($k$):</span>
+                    <span id="simKVal" class="sim-value-pill">25.0 N/m</span>
+                  </div>
+                  <input type="range" id="simK" class="custom-range" min="5.0" max="60.0" step="1.0" value="25.0">
+                </div>
+
+                <div class="sim-slider-item">
+                  <div class="sim-slider-header">
+                    <span>Amplitud Inicial ($A$):</span>
+                    <span id="simAmpVal" class="sim-value-pill">1.8 m</span>
+                  </div>
+                  <input type="range" id="simAmp" class="custom-range" min="0.4" max="2.5" step="0.1" value="1.8">
+                </div>
+
+              </div>
+
+              <!-- Barras de Energía Mecánica en Tiempo Real -->
+              <div class="energy-bars-container">
+                <div class="energy-title">
+                  <i class="fa-solid fa-chart-simple"></i> Balance Energético en Tiempo Real ($E_m = E_c + E_p$)
+                </div>
+
+                <div class="energy-row">
+                  <div class="energy-row-label">
+                    <span style="color: #2563eb;"><i class="fa-solid fa-gauge"></i> Energía Cinética ($E_c = \frac{1}{2}mv^2$):</span>
+                    <span id="energyValEc" style="font-family: var(--font-mono); color: #2563eb;">0.00 J</span>
+                  </div>
+                  <div class="energy-track">
+                    <div id="energyFillEc" class="energy-fill kinetic" style="width: 0%;"></div>
+                  </div>
+                </div>
+
+                <div class="energy-row">
+                  <div class="energy-row-label">
+                    <span style="color: #db2777;"><i class="fa-solid fa-compress"></i> Energía Potencial Elástica ($E_p = \frac{1}{2}kx^2$):</span>
+                    <span id="energyValEp" style="font-family: var(--font-mono); color: #db2777;">40.50 J</span>
+                  </div>
+                  <div class="energy-track">
+                    <div id="energyFillEp" class="energy-fill potential" style="width: 100%;"></div>
+                  </div>
+                </div>
+
+                <div class="energy-row" style="margin-bottom: 0;">
+                  <div class="energy-row-label">
+                    <span style="color: #059669;"><i class="fa-solid fa-shield-halved"></i> Energía Mecánica Total ($E_m = \text{constante}$):</span>
+                    <span id="energyValEm" style="font-family: var(--font-mono); color: #059669; font-weight: 700;">40.50 J</span>
+                  </div>
+                  <div class="energy-track">
+                    <div id="energyFillEm" class="energy-fill total" style="width: 100%;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Indicadores Teóricos Calculados al Vuelo -->
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-bottom: 18px; background: #fafaf9; padding: 12px; border-radius: 8px; border: 1px solid #e7e5e4;">
+                <div style="text-align: center;">
+                  <div style="font-size: 0.75rem; color: #64748b; font-weight: 600;">$\omega$ Angular</div>
+                  <div id="simOmegaVal" style="font-family: var(--font-mono); font-weight: 700; color: #432874;">5.00 rad/s</div>
+                </div>
+                <div style="text-align: center;">
+                  <div style="font-size: 0.75rem; color: #64748b; font-weight: 600;">Periodo $T$</div>
+                  <div id="simPeriodVal" style="font-family: var(--font-mono); font-weight: 700; color: #432874;">1.26 s</div>
+                </div>
+                <div style="text-align: center;">
+                  <div style="font-size: 0.75rem; color: #64748b; font-weight: 600;">Frecuencia $f$</div>
+                  <div id="simFreqVal" style="font-family: var(--font-mono); font-weight: 700; color: #432874;">0.80 Hz</div>
+                </div>
+                <div style="text-align: center;">
+                  <div style="font-size: 0.75rem; color: #64748b; font-weight: 600;">$v_{\max}$</div>
+                  <div id="simVmaxVal" style="font-family: var(--font-mono); font-weight: 700; color: #16a34a;">9.00 m/s</div>
+                </div>
+                <div style="text-align: center;">
+                  <div style="font-size: 0.75rem; color: #64748b; font-weight: 600;">$a_{\max}$</div>
+                  <div id="simAmaxVal" style="font-family: var(--font-mono); font-weight: 700; color: #dc2626;">45.00 m/s²</div>
+                </div>
+              </div>
+
+              <!-- Botonera de Acción -->
+              <div class="sim-buttons-row">
+                <button id="simPlayPause" class="btn-primary-action">
+                  <i class="fa-solid fa-pause"></i> Pausar
+                </button>
+                <button id="simStep" class="btn-secondary-action">
+                  <i class="fa-solid fa-forward-step"></i> Paso a Paso
+                </button>
+                <button id="simReset" class="btn-secondary-action">
+                  <i class="fa-solid fa-rotate-left"></i> Reiniciar
+                </button>
+                <button id="btnOpenSimModal" class="btn-modal-trigger" style="margin-left: auto;" title="Abrir Simulador en Ventana Modal Grande">
+                  <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                  <span>Modal Grande</span>
+                </button>
+              </div>
+
+            </div>
+          </div>
+          <span class="figure-caption"><strong>Ilustración 5:</strong> Simulador dinámico premium del sistema masa-resorte, ilustrando los vectores de elongación $\vec{x}$, velocidad $\vec{v}$ y fuerza $\vec{F}$, y el intercambio continuo de energía.</span>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PÁGINA 13: EJERCICIOS RESUELTOS CON CÓDIGO DE COLORES
+           ==================================================================== -->
+      <section id="page-13" class="notebook-page page-with-template">
+        <div class="page-inner-content">
+          <div class="page-header-banner">
+            <span class="page-category-tag"><i class="fa-solid fa-pen-ruler"></i> Metodología de Resolución</span>
+            <span class="page-sequence-indicator">Hoja 13 de 15</span>
+          </div>
+
+          <h2 class="page-title">Ejercicios Resueltos Paso a Paso</h2>
+          <p class="page-subtitle">Protocolo Estricto de 5 Fases con Código de Colores: Azul (Datos), Rojo (Incógnitas), Naranja (Despejadas)</p>
+
+          <!-- Tarjeta del Ejercicio 1 -->
+          <div class="exercise-card">
+            <div class="exercise-header">
+              <span class="exercise-title"><i class="fa-solid fa-brain"></i> Problema Maestro 1: Cinemática Completa de un Oscilador</span>
+              <span style="font-family: var(--font-mono); font-size: 0.85rem; background: #e0e7ff; color: #3730a3; padding: 4px 10px; border-radius: 6px; font-weight: 700;">Nivel Universitario</span>
+            </div>
+
+            <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 16px;">
+              <strong>Enunciado:</strong> Un bloque de masa <span class="badge-data">m = 500 g</span> se encuentra unido a un resorte helicoidal horizontal sobre una superficie sin fricción. El bloque es desplazado una distancia de <span class="badge-data">A = 12 cm</span> hacia la derecha desde su posición de equilibrio y se libera desde el reposo en el instante <span class="badge-data">t = 0 s</span>. Si el resorte posee una constante de elasticidad de <span class="badge-data">k = 200 N/m</span>, determine:
+              a) El periodo <span class="badge-target">T</span> y la frecuencia <span class="badge-target">f</span> del movimiento.
+              b) La ecuación canónica de la elongación <span class="badge-target">x(t)</span>.
+              c) La velocidad máxima <span class="badge-target">v_max</span> y la velocidad cuando el bloque se halla en <span class="badge-data">x = 6 cm</span>.
+              d) La aceleración máxima <span class="badge-target">a_max</span> del oscilador.
+            </p>
+
+            <!-- Fase 1: Identificación de Variables -->
+            <div class="exercise-step">
+              <div class="exercise-step-title" style="color: #432874;">
+                <i class="fa-solid fa-1"></i> Fase 1: Identificación Rigurosa de Variables
+              </div>
+              <p style="margin-bottom: 8px;">
+                <strong style="color: #1d4ed8;">1. DATOS IDENTIFICADOS (en color AZUL):</strong>
+              </p>
+              <div style="margin-bottom: 12px;">
+                <span class="badge-data">m = 500 g = 0.50 kg</span>
+                <span class="badge-data">k = 200 N/m</span>
+                <span class="badge-data">A = 12 cm = 0.12 m</span>
+                <span class="badge-data">v(0) = 0 m/s (en reposo)</span>
+                <span class="badge-data">t_0 = 0 s</span>
+                <span class="badge-data">x_1 = 6 cm = 0.06 m</span>
+              </div>
+
+              <p style="margin-bottom: 8px;">
+                <strong style="color: #dc2626;">2. INCÓGNITAS IDENTIFICADAS (en color ROJO):</strong>
+              </p>
+              <div>
+                <span class="badge-target">T = ? [s]</span>
+                <span class="badge-target">f = ? [Hz]</span>
+                <span class="badge-target">x(t) = ? [m]</span>
+                <span class="badge-target">v_{\max} = ? [m/s]</span>
+                <span class="badge-target">v(x_1) = ? [m/s]</span>
+                <span class="badge-target">a_{\max} = ? [m/s²]</span>
+              </div>
+            </div>
+
+            <!-- Fase 2: Fórmulas Necesarias -->
+            <div class="exercise-step">
+              <div class="exercise-step-title" style="color: #432874;">
+                <i class="fa-solid fa-2"></i> Fase 2: Fórmulas Teóricas Necesarias
+              </div>
+              <p style="margin: 0; font-size: 0.92rem;">
+                $$\omega = \sqrt{\frac{k}{m}}, \quad T = \frac{2\pi}{\omega}, \quad f = \frac{1}{T}, \quad x(t) = A\cos(\omega t + \phi_0)$$
+                $$v_{\max} = \omega A, \quad v(x) = \pm \omega\sqrt{A^2 - x^2}, \quad a_{\max} = \omega^2 A$$
+              </p>
+            </div>
+
+            <!-- Fase 3: Reemplazo, Conversión de Unidades y Despeje -->
+            <div class="exercise-step">
+              <div class="exercise-step-title" style="color: #432874;">
+                <i class="fa-solid fa-3"></i> Fase 3 & 4: Reemplazo, Conversiones de Unidades y Despeje (Resultados en NARANJA)
+              </div>
+              
+              <p><strong>Cálculo de la Frecuencia Angular $\omega$:</strong></p>
+              <div class="equation-box">
+                <div class="equation-content">
+                  $$\omega = \sqrt{\frac{200\text{ N/m}}{0.50\text{ kg}}} = \sqrt{400\text{ s}^{-2}} = 20\text{ rad/s} \quad \Longrightarrow \quad \mathbf{\omega = 20\text{ rad/s}}$$
+                </div>
+              </div>
+              <p>Por lo tanto, la frecuencia angular calculada es <span class="badge-solved">\omega = 20\text{ rad/s}</span> (ya no es incógnita).</p>
+
+              <p><strong>Cálculo del Periodo $T$ y Frecuencia $f$:</strong></p>
+              <div class="equation-box">
+                <div class="equation-content">
+                  $$T = \frac{2\pi}{20\text{ rad/s}} = \frac{\pi}{10}\text{ s} \approx 0.314\text{ s} \quad \Longrightarrow \quad \mathbf{T = 0.314\text{ s}}$$
+                  $$f = \frac{1}{T} = \frac{1}{0.31416\text{ s}} \approx 3.183\text{ Hz} \quad \Longrightarrow \quad \mathbf{f = 3.18\text{ Hz}}$$
+                </div>
+              </div>
+              <p>Variables resueltas: <span class="badge-solved">T = 0.314 s</span> y <span class="badge-solved">f = 3.18 Hz</span>.</p>
+
+              <p><strong>Ecuación de la Elongación $x(t)$:</strong></p>
+              <p>Dado que en $t = 0\text{ s}$ la masa parte de su máxima amplitud $x(0) = A = 0.12\text{ m}$, tenemos que $\cos(\phi_0) = 1 \implies \mathbf{\phi_0 = 0\text{ rad}}$. De este modo:</p>
+              <div class="equation-box">
+                <div class="equation-content">
+                  $$\mathbf{x(t) = 0.12 \cdot \cos(20t)\text{ [m]}}$$
+                </div>
+              </div>
+              <p>Ecuación resultante: <span class="badge-solved">x(t) = 0.12 \cos(20t)</span>.</p>
+
+              <p><strong>Cálculo de Velocidades:</strong></p>
+              <div class="equation-box">
+                <div class="equation-content">
+                  $$v_{\max} = \omega A = (20\text{ rad/s})(0.12\text{ m}) = 2.40\text{ m/s}$$
+                  $$v(0.06) = \pm 20\sqrt{(0.12)^2 - (0.06)^2} = \pm 20\sqrt{0.0144 - 0.0036} = \pm 20\sqrt{0.0108} \approx \pm 2.078\text{ m/s}$$
+                </div>
+              </div>
+              <p>Variables resueltas: <span class="badge-solved">v_{\max} = 2.40 m/s</span> y <span class="badge-solved">v(0.06m) = \pm 2.08 m/s</span>.</p>
+
+              <p><strong>Cálculo de la Aceleración Máxima $a_{\max}$:</strong></p>
+              <div class="equation-box">
+                <div class="equation-content">
+                  $$a_{\max} = \omega^2 A = (20\text{ rad/s})^2(0.12\text{ m}) = 400 \cdot 0.12 = 48.00\text{ m/s}^2$$
+                </div>
+              </div>
+              <p>Aceleración máxima resuelta: <span class="badge-solved">a_{\max} = 48.00 m/s²</span>.</p>
+            </div>
+
+            <!-- Fase 5: Validación y Conclusiones -->
+            <div class="step-validation">
+              <h5><i class="fa-solid fa-circle-check"></i> Fase 5: Validación Dimensional de Resultados y Conclusiones Físicas</h5>
+              <ul style="margin: 0; padding-left: 20px; font-size: 0.9rem;">
+                <li><strong>Análisis Dimensional:</strong> Las dimensiones $[\omega] = \sqrt{[N/m]/[kg]} = \sqrt{[kg \cdot m \cdot s^{-2} \cdot m^{-1}] / [kg]} = \sqrt{s^{-2}} = s^{-1} = \text{rad/s}$ son formal y rigurosamente consistentes.</li>
+                <li><strong>Consistencia Física:</strong> La velocidad en $x = 6\text{ cm}$ ($2.08\text{ m/s}$) es menor que la velocidad máxima en el equilibrio ($2.40\text{ m/s}$), validando la desaceleración del cuerpo hacia los extremos.</li>
+                <li><strong>Aceleración Extrema:</strong> Los $48\text{ m/s}^2$ equivalen a casi 5 veces la aceleración de la gravedad ($~4.9g$), lo cual es físicamente coherente dada la alta rigidez del resorte ($200\text{ N/m}$) para una masa pequeña de tan solo $0.5\text{ kg}$.</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PÁGINA 14: GLOSARIO CIENTÍFICO INTERACTIVO
+           ==================================================================== -->
+      <section id="page-14" class="notebook-page page-with-template">
+        <div class="page-inner-content">
+          <div class="page-header-banner">
+            <span class="page-category-tag"><i class="fa-solid fa-spell-check"></i> Diccionario Técnico</span>
+            <span class="page-sequence-indicator">Hoja 14 de 15</span>
+          </div>
+
+          <h2 class="page-title">Glosario Científico de Oscilaciones</h2>
+          <p class="page-subtitle">Terminología fundamental de la mecánica oscilatoria con filtrado dinámico en vivo</p>
+
+          <div class="glossary-search-box">
+            <i class="fa-solid fa-magnifying-glass glossary-icon"></i>
+            <input type="text" id="glossarySearch" class="glossary-input" placeholder="Buscar término (ej. Amplitud, Frecuencia, Hooke, Resonancia...)">
+          </div>
+
+          <div class="glossary-grid">
+            
+            <div class="glossary-card">
+              <div class="glossary-term">
+                <span>Amplitud</span>
+                <span class="glossary-symbol">$A \text{ [m]}$</span>
+              </div>
+              <p class="glossary-desc" style="font-size: 0.88rem; color: #4b5563; margin: 0;">
+                Máximo desplazamiento que experimenta una partícula que oscila respecto a su posición de equilibrio estable.
+              </p>
+            </div>
+
+            <div class="glossary-card">
+              <div class="glossary-term">
+                <span>Elongación</span>
+                <span class="glossary-symbol">$x(t) \text{ [m]}$</span>
+              </div>
+              <p class="glossary-desc" style="font-size: 0.88rem; color: #4b5563; margin: 0;">
+                Posición instantánea con signo del oscilador respecto al punto de equilibrio en cualquier instante de tiempo $t$.
+              </p>
+            </div>
+
+            <div class="glossary-card">
+              <div class="glossary-term">
+                <span>Periodo</span>
+                <span class="glossary-symbol">$T \text{ [s]}$</span>
+              </div>
+              <p class="glossary-desc" style="font-size: 0.88rem; color: #4b5563; margin: 0;">
+                Tiempo indispensable que requiere el oscilador para describir una oscilación o ciclo completo de vaivén.
+              </p>
+            </div>
+
+            <div class="glossary-card">
+              <div class="glossary-term">
+                <span>Frecuencia</span>
+                <span class="glossary-symbol">$f \text{ [Hz]}$</span>
+              </div>
+              <p class="glossary-desc" style="font-size: 0.88rem; color: #4b5563; margin: 0;">
+                Número de oscilaciones completas llevadas a cabo por el cuerpo por unidad de tiempo ($f = 1/T$).
+              </p>
+            </div>
+
+            <div class="glossary-card">
+              <div class="glossary-term">
+                <span>Frecuencia Angular</span>
+                <span class="glossary-symbol">$\omega \text{ [rad/s]}$</span>
+              </div>
+              <p class="glossary-desc" style="font-size: 0.88rem; color: #4b5563; margin: 0;">
+                Rapidez angular con la que varía el ángulo de fase de la función armónica ($\omega = 2\pi f = \sqrt{k/m}$).
+              </p>
+            </div>
+
+            <div class="glossary-card">
+              <div class="glossary-term">
+                <span>Fase Inicial</span>
+                <span class="glossary-symbol">$\phi_0 \text{ [rad]}$</span>
+              </div>
+              <p class="glossary-desc" style="font-size: 0.88rem; color: #4b5563; margin: 0;">
+                Estado angular del oscilador en el instante de tiempo de referencia inicial $t = 0$.
+              </p>
+            </div>
+
+            <div class="glossary-card">
+              <div class="glossary-term">
+                <span>Fuerza Restauradora</span>
+                <span class="glossary-symbol">$F_{\text{el}} \text{ [N]}$</span>
+              </div>
+              <p class="glossary-desc" style="font-size: 0.88rem; color: #4b5563; margin: 0;">
+                Fuerza elástica dirigida hacia el punto de equilibrio que busca retornar al cuerpo a su reposo estable ($F = -kx$).
+              </p>
+            </div>
+
+            <div class="glossary-card">
+              <div class="glossary-term">
+                <span>Ley de Hooke</span>
+                <span class="glossary-symbol">$F = -kx$</span>
+              </div>
+              <p class="glossary-desc" style="font-size: 0.88rem; color: #4b5563; margin: 0;">
+                Principio físico que postula la proporcionalidad directa entre el esfuerzo deformador y la deformación elástica.
+              </p>
+            </div>
+
+            <div class="glossary-card">
+              <div class="glossary-term">
+                <span>Energía Mecánica Total</span>
+                <span class="glossary-symbol">$E_m = \frac{1}{2}kA^2$</span>
+              </div>
+              <p class="glossary-desc" style="font-size: 0.88rem; color: #4b5563; margin: 0;">
+                Suma de la energía cinética y potencial elástica, conservada como magnitud constante en el M.A.S. ideal.
+              </p>
+            </div>
+
+            <div class="glossary-card">
+              <div class="glossary-term">
+                <span>Resonancia</span>
+                <span class="glossary-symbol">$\omega \to \omega_0$</span>
+              </div>
+              <p class="glossary-desc" style="font-size: 0.88rem; color: #4b5563; margin: 0;">
+                Fenómeno donde la frecuencia de excitación externa coincide con la frecuencia natural, maximizando la amplitud.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           PÁGINA 15: REFERENCIAS BIBLIOGRÁFICAS (NORMAS APA 7)
+           ==================================================================== -->
+      <section id="page-15" class="notebook-page page-with-template">
+        <div class="page-inner-content">
+          <div class="page-header-banner">
+            <span class="page-category-tag"><i class="fa-solid fa-graduation-cap"></i> Rigor Académico</span>
+            <span class="page-sequence-indicator">Hoja 15 de 15</span>
+          </div>
+
+          <h2 class="page-title">Referencias Bibliográficas</h2>
+          <p class="page-subtitle">Fuentes Académicas y Tratados Clásicos Formateados con Normas APA 7ma Edición</p>
+
+          <div style="background: #ffffff; border-radius: 12px; padding: 24px; box-shadow: var(--shadow-sm); border: 1px solid rgba(67, 40, 116, 0.15);">
+            
+            <div class="apa-reference-item">
+              French, A. P. (2014). <em>Vibraciones y ondas</em> (2.ª ed.). Editorial Reverté.
+            </div>
+
+            <div class="apa-reference-item">
+              Halliday, D., Resnick, R., & Walker, J. (2018). <em>Fundamentos de física</em> (10.ª ed., Vol. 1). Grupo Editorial Patria.
+            </div>
+
+            <div class="apa-reference-item">
+              Hooke, R. (1678). <em>Lectures de potentia restitutiva, or of spring explaining the power of springing bodies</em>. John Martyn.
+            </div>
+
+            <div class="apa-reference-item">
+              Pain, H. J. (2005). <em>The physics of vibrations and waves</em> (6.ª ed.). John Wiley & Sons.
+            </div>
+
+            <div class="apa-reference-item">
+              Sears, F. W., Zemansky, M. W., Young, H. D., & Freedman, R. A. (2018). <em>Física universitaria con física moderna</em> (14.ª ed., Vol. 1). Pearson Educación.
+            </div>
+
+            <div class="apa-reference-item">
+              Serway, R. A., & Jewett, J. W. (2019). <em>Física para ciencias e ingeniería</em> (10.ª ed., Vol. 1). Cengage Learning.
+            </div>
+
+            <div class="apa-reference-item">
+              Tipler, P. A., & Mosca, G. (2020). <em>Física para la ciencia y la tecnología: Mecánica, oscilaciones y ondas, termodinámica</em> (6.ª ed., Vol. 1). Editorial Reverté.
+            </div>
+
+          </div>
+
+          <div class="concept-callout" style="margin-top: 30px; text-align: center;">
+            <div class="concept-callout-title" style="justify-content: center;">
+              <i class="fa-solid fa-award"></i> Certificación de Culminación Académica
+            </div>
+            <p style="margin: 0; font-size: 0.95rem; color: #432874; font-weight: 600;">
+              El presente cuaderno digital interactivo vertical cumple con los estándares universitarios de rigurosidad matemática, física teórica y excelencia en diseño visual e interactividad digital.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Barra de Navegación Inferior Flotante y Footer Obligatorio -->
+    <nav class="bottom-nav-dock">
+      <div class="nav-controls-row">
+        
+        <div class="nav-btn-group">
+          <button id="navHome" class="nav-btn" title="Ir a la Portada">
+            <i class="fa-solid fa-house"></i>
+            <span>Portada</span>
+          </button>
+          <button id="navPrev" class="nav-btn" title="Página Anterior">
+            <i class="fa-solid fa-chevron-up"></i>
+            <span>Hoja Anterior</span>
+          </button>
+        </div>
+
+        <div class="nav-btn-group">
+          <select id="navPageSelect" class="nav-page-select" title="Seleccionar Hoja Directa">
+            <option value="1">Hoja 1: Portada Principal</option>
+            <option value="2">Hoja 2: Equipo Multidisciplinar</option>
+            <option value="3">Hoja 3: Índice General</option>
+            <option value="4">Hoja 4: Mapa Mental Interactivo</option>
+            <option value="5">Hoja 5: Línea de Tiempo Histórica</option>
+            <option value="6">Hoja 6: Fundamentos del M.A.S.</option>
+            <option value="7">Hoja 7: Dinámica & Newton</option>
+            <option value="8">Hoja 8: Elongación & Posición</option>
+            <option value="9">Hoja 9: Velocidad & Derivada</option>
+            <option value="10">Hoja 10: Aceleración & Resumen</option>
+            <option value="11">Hoja 11: Laboratorio GeoGebra</option>
+            <option value="12">Hoja 12: Simulador Masa-Resorte</option>
+            <option value="13">Hoja 13: Ejercicios Resueltos</option>
+            <option value="14">Hoja 14: Glosario Interactivo</option>
+            <option value="15">Hoja 15: Referencias APA 7</option>
+          </select>
+          <span id="navCounter" class="nav-counter">Hoja 1 de 15</span>
+        </div>
+
+        <div class="nav-btn-group">
+          <button id="navNext" class="nav-btn" title="Página Siguiente">
+            <span>Siguiente Hoja</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Pie de página o Footer Requerido Obligatoriamente -->
+      <footer class="mandatory-footer">
+        Cuaderno creado por : <strong>Alejandra Barreto, Camila Rengifo, Santiago Pelaez</strong>
+      </footer>
+    </nav>
+
+  </div>
+
+  <!-- ====================================================================
+       VENTANA MODAL GRANDE COLAPSABLE PARA GRÁFICAS INTERACTIVAS Y SIMULADOR
+       ==================================================================== -->
+  <div id="graphicModalOverlay" class="graphic-modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div id="graphicModalContainer" class="graphic-modal-container">
+      
+      <!-- Cabecera de la Ventana Modal -->
+      <div class="graphic-modal-header">
+        <div class="modal-title-group">
+          <i id="modalHeaderIcon" class="fa-solid fa-chart-line"></i>
+          <span id="modalHeaderTitle" class="modal-title-text">Gráfica Interactiva en Modal Grande</span>
+          <span id="modalHeaderBadge" style="background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.3); padding: 2px 10px; border-radius: 12px; font-size: 0.74rem; color: #fde047; font-weight: 700; margin-left: 8px;">Vista Ampliada</span>
+        </div>
+        
+        <div class="modal-actions-group">
+          <button id="btnModalCollapse" class="modal-control-btn" title="Minimizar / Colapsar Ventana Modal" aria-label="Minimizar Modal">
+            <i class="fa-solid fa-window-minimize"></i>
+          </button>
+          <button id="btnModalMaximize" class="modal-control-btn" title="Pantalla Completa" aria-label="Maximizar Modal">
+            <i class="fa-solid fa-expand"></i>
+          </button>
+          <button id="btnModalClose" class="modal-control-btn btn-close" title="Cerrar y Regresar al Cuaderno" aria-label="Cerrar Modal">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Barra de Aviso en Estado Colapsado -->
+      <div id="modalCollapsedBar" class="modal-collapsed-bar" style="display: none;">
+        <span><i class="fa-solid fa-circle-info" style="color: #fde047; margin-right: 6px;"></i> Ventana minimizada. Puedes navegar el cuaderno mientras la gráfica sigue activa.</span>
+        <button id="btnModalRestore" class="btn-pill" style="padding: 4px 14px; font-size: 0.8rem; background: #6366f1; color: #ffffff; border: none; cursor: pointer; border-radius: 20px;">
+          <i class="fa-solid fa-window-restore"></i> Restaurar Vista
+        </button>
+      </div>
+
+      <!-- Cuerpo de la Modal donde se renderiza la gráfica ampliada -->
+      <div id="graphicModalBody" class="graphic-modal-body">
+        <!-- El contenido interactivo se monta aquí dinámicamente -->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scripts del Motor y Lógica -->
+  <script src="js/geogebra-engine.js"></script>
+  <script src="js/physics-simulator.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
